@@ -9,16 +9,16 @@ class TextInputField extends StatelessWidget {
   const TextInputField({Key? key,
   required this.controller,
   required this.labelText,
-  required this.isObscure,
+  this.isObscure = false  ,
   required this.icon,
   }) :super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-
+     controller: controller,
       decoration: InputDecoration(
-
+        labelText: labelText,
         prefixIcon: Icon(icon),
         labelStyle: const TextStyle(fontSize:20),
         enabledBorder: OutlineInputBorder(
